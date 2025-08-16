@@ -1,0 +1,357 @@
+{
+  "info": {
+    "name": "住宿管理 API",
+    "description": "住宿管理系統的完整 API 測試集合",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "lodgingId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "選項 API",
+      "item": [
+        {
+          "name": "獲取住宿類型",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/options/lodgings-types",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "options", "lodgings-types"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取城市列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/options/cities",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "options", "cities"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取國家列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/options/countries",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "options", "countries"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取設施列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/options/facilities",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "options", "facilities"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取床型列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/options/bed-types",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "options", "bed-types"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "住宿管理 API",
+      "item": [
+        {
+          "name": "創建住宿",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('lodgingId', response.id);",
+                  "    console.log('創建住宿成功，ID:', response.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"大阪試營運飯店\",\n  \"lodgingTypeId\": 1,\n  \"description\": \"位於心齋橋站附近，交通便利\",\n  \"address\": \"大阪市中央區測試路100號\",\n  \"cityId\": 48,\n  \"countryId\": 183,\n  \"latitude\": 34.6937,\n  \"longitude\": 135.5023,\n  \"lodgingTel\": \"06-1234-5678\",\n  \"email\": \"hotel_osaka@example.com\",\n  \"isActive\": true,\n  \"images\": [\n    {\n      \"imageType\": \"lodging\",\n      \"roomTypeId\": null,\n      \"imageUrl\": \"https://cdn.example.com/imgs/osa1.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 0\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取住宿詳情",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/{{lodgingId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "{{lodgingId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "更新住宿",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"大阪試營運飯店 (已更新)\",\n  \"lodgingTypeId\": 1,\n  \"description\": \"位於心齋橋站附近，交通便利 (已更新)\",\n  \"address\": \"大阪市中央區測試路100號\",\n  \"cityId\": 48,\n  \"countryId\": 183,\n  \"latitude\": 34.6937,\n  \"longitude\": 135.5023,\n  \"lodgingTel\": \"06-1234-5678\",\n  \"email\": \"hotel_osaka@example.com\",\n  \"isActive\": true,\n  \"images\": [\n    {\n      \"imageId\": null,\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/osa1_updated.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 0\n    },\n    {\n      \"imageType\": \"lodging\",\n      \"roomTypeId\": null,\n      \"imageUrl\": \"https://cdn.example.com/imgs/osa2.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 1\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/{{lodgingId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "{{lodgingId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "軟刪除住宿",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/{{lodgingId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "{{lodgingId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取供應商住宿列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vendor/lodging",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vendor", "lodging"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "搜尋 API",
+      "item": [
+        {
+          "name": "搜尋住宿",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cityName\": \"大阪\",\n  \"checkInDate\": \"2024-02-01\",\n  \"checkOutDate\": \"2024-02-03\",\n  \"guestCount\": 2\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/search",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "search"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取熱門住宿",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/hot",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "hot"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "錯誤處理測試",
+      "item": [
+        {
+          "name": "創建住宿 - 驗證失敗",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"\",\n  \"email\": \"invalid-email\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "獲取不存在的住宿",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "999999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "更新不存在的住宿",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"測試飯店\",\n  \"lodgingTypeId\": 1,\n  \"cityId\": 48,\n  \"countryId\": 183\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "999999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "刪除不存在的住宿",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "999999"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "圖片管理測試",
+      "item": [
+        {
+          "name": "創建住宿 - 多張圖片",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"多圖片測試飯店\",\n  \"lodgingTypeId\": 1,\n  \"description\": \"測試多張圖片上傳\",\n  \"address\": \"測試地址\",\n  \"cityId\": 48,\n  \"countryId\": 183,\n  \"latitude\": 34.6937,\n  \"longitude\": 135.5023,\n  \"lodgingTel\": \"06-1234-5678\",\n  \"email\": \"test@example.com\",\n  \"isActive\": true,\n  \"images\": [\n    {\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/test1.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 0\n    },\n    {\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/test2.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 1\n    },\n    {\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/test3.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 2\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "更新住宿 - 混合圖片操作",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lodgingName\": \"多圖片測試飯店\",\n  \"lodgingTypeId\": 1,\n  \"description\": \"測試多張圖片上傳\",\n  \"address\": \"測試地址\",\n  \"cityId\": 48,\n  \"countryId\": 183,\n  \"latitude\": 34.6937,\n  \"longitude\": 135.5023,\n  \"lodgingTel\": \"06-1234-5678\",\n  \"email\": \"test@example.com\",\n  \"isActive\": true,\n  \"images\": [\n    {\n      \"imageId\": null,\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/new1.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 0\n    },\n    {\n      \"imageId\": null,\n      \"imageType\": \"lodging\",\n      \"imageUrl\": \"https://cdn.example.com/imgs/new2.jpg\",\n      \"mimeType\": \"image/jpeg\",\n      \"sortOrder\": 1\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lodgings/{{lodgingId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lodgings", "{{lodgingId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

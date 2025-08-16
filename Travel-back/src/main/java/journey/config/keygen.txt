@@ -1,0 +1,9 @@
+keytool \
+-genkeypair \
+-alias EEIT199Travel_JWT \
+-keyalg RSA \
+-keysize 2048 \
+-keystore jwtkeystore.jks \
+-storepass P@ssw0rd \
+-validity 36500 \
+-dname "CN=Journey.com, OU=group2, O=EEIT199, L=Daan, ST=Taipei, C=TW"

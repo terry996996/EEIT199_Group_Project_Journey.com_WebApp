@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="320"
+   width="320"
+   viewBox="0 0 5120 5120"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="user-regular.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,47.613237,0,1 @ F,0,0,1,0,31.968448,0,1 @ F,0,0,1,0,31.968448,0,1 @ F,0,0,1,0,47.992665,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="1.6699219"
+     inkscape:cx="64.074854"
+     inkscape:cy="159.5883"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:grid
+       id="grid3"
+       units="px"
+       originx="137.77237"
+       originy="157.45406"
+       spacingx="16"
+       spacingy="16"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <g
+     id="g2"
+     transform="matrix(0.8220951,0,0,0.8220951,833.60004,346.97176)">
+    <path
+       fill="#6b7280"
+       d="m 2850.0004,1199.9996 c 0,-414.21387 -335.7865,-749.99975 -750.0001,-749.99975 -414.2137,0 -750.0001,335.78588 -750.0001,749.99975 0,414.2139 335.7864,749.9999 750.0001,749.9999 414.2136,0 750.0001,-335.786 750.0001,-749.9999 z m -1950.0003,0 C 900.0001,537.25739 1437.2585,0 2100.0003,0 c 662.7418,0 1200.0001,537.25739 1200.0001,1199.9996 0,662.7423 -537.2583,1199.9996 -1200.0001,1199.9996 -662.7418,0 -1200.0002,-537.2573 -1200.0002,-1199.9996 z M 462.18756,4350 H 3738.7505 C 3655.313,3756.5625 3145.3129,3299.9999 2529.3753,3299.9999 H 1672.5002 C 1056.5626,3299.9999 546.56257,3756.5625 463.12506,4350 Z M 0,4521.5625 C 0,3598.1249 748.12511,2849.9998 1671.5627,2849.9998 h 856.8751 c 923.4377,0 1671.5628,748.1251 1671.5628,1671.5627 0,153.7501 -124.6876,278.4375 -278.4376,278.4375 H 278.43754 C 124.68755,4800 0,4675.3126 0,4521.5625 Z"
+       id="path1"
+       style="display:inline;stroke-width:60.0003;stroke-dasharray:none"
+       sodipodi:nodetypes="ssssssssssccssccsssssss" />
+    <path
+       style="fill:#d1d5db;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1975.3355,1936.7805 c -268.7658,-47.1447 -497.0943,-242.9844 -583.543,-500.5109 -36.3229,-108.2039 -47.3232,-253.1395 -27.6261,-363.9893 53.5242,-301.21944 288.1636,-542.66875 586.4319,-603.45197 245.8939,-50.10995 496.3853,24.83692 674.4781,201.80329 198.9042,197.64613 270.4989,487.06318 186.6758,754.62558 -18.4193,58.794 -55.1234,134.851 -92.4563,191.5844 -37.1959,56.5257 -140.4782,160.8124 -195.8725,197.7777 -82.4659,55.0305 -178.2143,96.487 -269.388,116.6376 -58.7637,12.987 -218.1414,16.1463 -278.6999,5.523 z"
+       id="path3" />
+    <path
+       style="display:inline;fill:#d1d5db;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       d="m 471.19016,4318.9368 c 2.12565,-16.0235 12.3582,-62.1287 22.73922,-102.4562 110.51903,-429.338 450.63343,-767.6044 880.55372,-875.7691 146.7877,-36.9306 168.8231,-37.9519 764.4646,-35.4354 517.5106,2.187 535.2026,2.6115 596.3381,14.3251 268.0405,51.3559 481.7556,165.2419 667.2305,355.5584 97.3066,99.847 164.9138,196.9043 226.2733,324.8406 50.2633,104.8 81.5558,204.1986 103.8347,329.8245 l 3.2355,18.2457 H 2101.5929 467.32547 Z"
+       id="path4" />
+  </g>
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:16;stroke-dasharray:none"
+     id="path2"
+     cx="2560"
+     cy="2560"
+     r="2536.7014" />
+</svg>

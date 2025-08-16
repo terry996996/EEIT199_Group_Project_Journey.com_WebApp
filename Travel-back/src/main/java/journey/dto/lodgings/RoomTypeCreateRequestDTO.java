@@ -1,0 +1,202 @@
+package journey.dto.lodgings;
+
+import java.util.List;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+import journey.dto.lodgings.ImageDTO;
+
+/**
+ * 房型建立請求資料傳輸物件（DTO）
+ * 用於接收建立新房型時的請求資料。
+ * 
+ * @author FAN
+ * @since 250704
+ */
+public class RoomTypeCreateRequestDTO {
+
+   private Integer id;
+
+   @NotBlank(message = "房型名稱不能為空")
+   private String roomTypeName;
+   @NotBlank(message = "房型描述不能為空")
+   private String description;
+   @NotNull(message = "每晚價格不能為空")
+   private Integer pricePerNight;
+   @NotNull(message = "最大入住人數不能為空")
+   private Integer maxGuests;
+
+   private Boolean isActive;
+
+   private Integer lodgingId;
+
+   private String lodgingName;
+
+   private Integer createdBy;
+
+   private String createdByName;
+
+   private Integer updatedBy;
+
+   private String updatedByName;
+
+   @NotEmpty(message = "床型不能為空")
+   private List<BedTypeDTO> beds;
+
+   @NotEmpty(message = "設施不能為空")
+   private List<Integer> facilityIds;
+
+   @Size(max = 5, message = "圖片數量不能超過5張")
+   private List<ImageDTO> images;
+
+   public RoomTypeCreateRequestDTO() {
+   }
+
+   public RoomTypeCreateRequestDTO(Integer id,
+         @NotBlank(message = "房型名稱不能為空") String roomTypeName, @NotBlank(message = "房型描述不能為空") String description,
+         @NotNull(message = "每晚價格不能為空") Integer pricePerNight, @NotNull(message = "最大入住人數不能為空") Integer maxGuests,
+         Boolean isActive, Integer lodgingId, String lodgingName, Integer createdBy, String createdByName,
+         Integer updatedBy, String updatedByName, @NotEmpty(message = "床型不能為空") List<BedTypeDTO> beds,
+         @NotEmpty(message = "設施不能為空") List<Integer> facilityIds,
+         @Size(max = 5, message = "圖片數量不能超過5張") List<ImageDTO> images) {
+      this.id = id;
+      this.roomTypeName = roomTypeName;
+      this.description = description;
+      this.pricePerNight = pricePerNight;
+      this.maxGuests = maxGuests;
+      this.isActive = isActive;
+      this.lodgingId = lodgingId;
+      this.lodgingName = lodgingName;
+      this.createdBy = createdBy;
+      this.createdByName = createdByName;
+      this.updatedBy = updatedBy;
+      this.updatedByName = updatedByName;
+      this.beds = beds;
+      this.facilityIds = facilityIds;
+      this.images = images;
+   }
+
+   public Integer getId() {
+      return id;
+   }
+
+   public void setId(Integer id) {
+      this.id = id;
+   }
+
+   public String getRoomTypeName() {
+      return roomTypeName;
+   }
+
+   public void setRoomTypeName(String roomTypeName) {
+      this.roomTypeName = roomTypeName;
+   }
+
+   public String getDescription() {
+      return description;
+   }
+
+   public void setDescription(String description) {
+      this.description = description;
+   }
+
+   public Integer getPricePerNight() {
+      return pricePerNight;
+   }
+
+   public void setPricePerNight(Integer pricePerNight) {
+      this.pricePerNight = pricePerNight;
+   }
+
+   public Integer getMaxGuests() {
+      return maxGuests;
+   }
+
+   public void setMaxGuests(Integer maxGuests) {
+      this.maxGuests = maxGuests;
+   }
+
+   public Boolean getIsActive() {
+      return isActive;
+   }
+
+   public void setIsActive(Boolean isActive) {
+      this.isActive = isActive;
+   }
+
+   public Integer getLodgingId() {
+      return lodgingId;
+   }
+
+   public void setLodgingId(Integer lodgingId) {
+      this.lodgingId = lodgingId;
+   }
+
+   public String getLodgingName() {
+      return lodgingName;
+   }
+
+   public void setLodgingName(String lodgingName) {
+      this.lodgingName = lodgingName;
+   }
+
+   public Integer getCreatedBy() {
+      return createdBy;
+   }
+
+   public void setCreatedBy(Integer createdBy) {
+      this.createdBy = createdBy;
+   }
+
+   public String getCreatedByName() {
+      return createdByName;
+   }
+
+   public void setCreatedByName(String createdByName) {
+      this.createdByName = createdByName;
+   }
+
+   public Integer getUpdatedBy() {
+      return updatedBy;
+   }
+
+   public void setUpdatedBy(Integer updatedBy) {
+      this.updatedBy = updatedBy;
+   }
+
+   public String getUpdatedByName() {
+      return updatedByName;
+   }
+
+   public void setUpdatedByName(String updatedByName) {
+      this.updatedByName = updatedByName;
+   }
+
+   public List<BedTypeDTO> getBeds() {
+      return beds;
+   }
+
+   public void setBeds(List<BedTypeDTO> beds) {
+      this.beds = beds;
+   }
+
+   public List<Integer> getFacilityIds() {
+      return facilityIds;
+   }
+
+   public void setFacilityIds(List<Integer> facilityIds) {
+      this.facilityIds = facilityIds;
+   }
+
+   public List<ImageDTO> getImages() {
+      return images;
+   }
+
+   public void setImages(List<ImageDTO> images) {
+      this.images = images;
+   }
+
+}

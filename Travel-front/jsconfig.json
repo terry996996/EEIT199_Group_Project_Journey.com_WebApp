@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/views/*": [
+        "./src/views/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "@/stores/*": [
+        "./src/stores/*"
+      ],
+      "@/composables/*": [
+        "./src/composables/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/assets/*": [
+        "./src/assets/*"
+      ]
+    },
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public"
+  ],
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.jsx",
+    "src/**/*.tsx"
+  ]
+}
